@@ -1,14 +1,18 @@
+import uuid
+
 from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
+from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql.expression import text  # to insert sql functions as a text
 from sqlalchemy.sql.sqltypes import TIMESTAMP
 
-from database import Base
+from .database import Base
 
 
 class Post(Base):
     __tablename__ = "posts"
 
+    # id = Column(UUID(as_uuid=True), primary_key=True, default=uudi.uuid4, nullable=False)
     id = Column(Integer, primary_key=True, nullable=False)
     title = Column(String, nullable=False)
     content = Column(String, nullable=False)
@@ -24,6 +28,8 @@ class Post(Base):
 
 class User(Base):
     __tablename__ = "users"
+
+    # id = Column(UUID(as_uuid=True), primary_key=True, default=uudi.uuid4, nullable=False)
     id = Column(Integer, primary_key=True, nullable=False)
     email = Column(String, nullable=False, unique=True)
     password = Column(String, nullable=False)
