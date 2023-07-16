@@ -6,11 +6,12 @@ from .routers import user
 from . import models
 from .database import engine
 
-models.Base.metadata.create_all(bind=engine)
-
+# create database
 if not database_exists(engine.url):
     create_database(engine.url)
 
+# create tables
+models.Base.metadata.create_all(bind=engine)
 
 
 app = FastAPI()
