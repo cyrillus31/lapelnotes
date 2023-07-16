@@ -5,10 +5,10 @@ from . import models, schemas
 
 
 def create_user(db: Session, user: schemas.UserCreate):
-    hashed_password = utils.hash(user.password)
-    user.password = hashed_password
+    salt = utils.salt_generator()
+    hashed_password = utils.hash(user.password + salt)
 
-    new_user = models.User(**user.dict())
+    new_user = models.User(salt=salt, email=user.email, password=hashed_password)
     db.add(new_user)
     db.commit()
     db.refresh(new_user)
