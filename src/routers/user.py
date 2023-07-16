@@ -16,8 +16,9 @@ def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     return crud.create_user(db, user)
 
 
-@router.post("/{id}", response_model=schemas.UserOut)
-def get_user(
-    id: str,
-):
-    pass
+@router.get("/{id}", response_model=schemas.UserOut)
+def get_user(id: str, db: Session = Depends(get_db)):
+    user = crud.get_user_by_id(db, id)
+    if not user:
+        raise HTTPException(status_code=404, detail=f"User {id} doesn't exist")
+    return user
