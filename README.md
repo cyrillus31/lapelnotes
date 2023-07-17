@@ -1,6 +1,6 @@
 # "Lapel Notes" my BJJ-blog website 
 ## Work in progress.  
-Meanwhile, checkout Lapel Notes telegram channel via [link](https//www.t.me/lapelnotes)
+Meanwhile, checkout Lapel Notes telegram channel via [link](https://www.t.me/lapelnotes)
 ___
 ## Description
 ### Backend
