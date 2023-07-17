@@ -1,12 +1,4 @@
 # "Lapel Notes" my BJJ-blog website 
-<style>
-  .lapelnotes_logo {
-    border-radius: 50%;
-    max-width: 200px;
-    height: auto;
-    box-shadow: 50px 10px 50px 30px darkblue;
-  }
-</style>
 <p align="center">
   <img class="lapelnotes_logo" src="https://raw.githubusercontent.com/cyrillus31/cyrillus31/main/lapelnotes_logo.jpg">
 </p>
